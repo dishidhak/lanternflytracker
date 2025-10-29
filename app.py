@@ -41,7 +41,7 @@ def upload():
 @app.get("/api/v1/gallery")
 def gallery():
     blobs = [f"{cc.url}/{b.name}" for b in cc.list_blobs()]
-    return jsonify(blobs)
+    return jsonify({"ok": True, "gallery": blobs})
 
 
 # --- Health check API ---
